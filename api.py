@@ -70,7 +70,6 @@ def query_tickets(from_, to, stations):
     QUERY_TICKET_CMD = "curl -s 'https://kyfw.12306.cn/otn/leftTicket/queryT?leftTicketDTO.train_date=2016-10-07&" + code_param + "&purpose_codes=ADULT' -H 'Pragma: no-cache' -H 'Accept-Encoding: gzip, deflate, sdch, br' -H 'Accept-Language: en-US,en;q=0.8,zh-CN;q=0.6,zh;q=0.4' -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.106 Safari/537.36' -H 'Accept: */*' -H 'Cache-Control: no-cache' -H 'X-Requested-With: XMLHttpRequest' -H 'Cookie: JSESSIONID=E0590039B6481B984912831DD2DF7507; BIGipServerotn=1005584906.64545.0000; _jc_save_fromStation=%u6F4D%u574A%2CWFK; _jc_save_toStation=%u6DF1%u5733%2CSZQ; _jc_save_fromDate=2016-10-07; _jc_save_toDate=2016-10-03; _jc_save_wfdc_flag=dc' -H 'Connection: keep-alive' -H 'If-Modified-Since: 0' -H 'Referer: https://kyfw.12306.cn/otn/leftTicket/init' --compressed --insecure"
     res = _get_res(QUERY_TICKET_CMD)
 
-    print res
     return res['data']
 
 
